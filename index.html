@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks programme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/main.min.css">
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="header__list">
+                <li class="header__item">To do list</li>
+                <li class="header__item">Habits</li>
+                <li class="header__item">Statistics</li>
+                <li class="header__item">Notes</li>
+            </ul>
+        </nav>
+        <h1 class="header__title">Tasks & Habits Tracker</h1>
+        <span class="header__describe">Organize, edit, observe, have it done</span>
+    </header>
+    <main>
+        <section class="todo">
+            <h2 class="todo__title">To do list</h2>
+              <input id="taskInput" class="todo__input" placeholder="New task">
+        <button onclick="addTask()" class="todo__btn">Add</button>
+        <ul id="taskList" class="todo__list"></ul>
+        </section>
+
+         <section class="habits">
+         <h2 class="habits__title">Habits</h2>
+         <ul id="habitList" class="habits__list"></ul>
+         </section>
+
+         <section class="stats">
+            <h2 class="stats__title">Statistics</h2>
+            <ul class="stats__list">
+                <li class="stats__item">
+                    <h2 class="stats__subtitle">Tasks</h2>
+                </li>
+                <li class="stats__item">
+                    <h2 class="stats__subtitle">Habits</h2>
+                </li>
+            </ul>
+         </section>
+
+         <section class="notes">
+            <h2 class="notes__title">Notes</h2>
+               <input id="noteInput" placeholder="Note">
+        <button onclick="addNote()" class="notes__btn">Add</button>
+        <ul id="noteList" class="notes__list"></ul>
+         </section>
+    </main>
+    <footer></footer>
+    
+    <script src="script.js"></script>
+</body>
