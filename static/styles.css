@@ -98,7 +98,11 @@ img {
   text-align: center;
   padding-bottom: 40px;
 }
-.todo__add-btn {
+.todo__sort-wrap {
+  display: flex;
+  justify-content: center;
+}
+.todo__add-btn, .todo__sort {
   display: block;
   margin: 0 auto;
   border: 1px solid #6b1b85;
@@ -173,40 +177,41 @@ img {
   letter-spacing: 0.6px;
   padding-bottom: 30px;
 }
-.modal__describe {
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 50px;
-  margin-left: 40px;
-}
-.modal__wrap {
+.modal__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.modal__input {
-  margin-top: 50px;
+  padding-top: 40px;
   margin-left: 40px;
+}
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.12px;
+  color: #fff;
+  margin-left: 40px;
+}
+.modal__input, .modal__level {
   border-radius: 5px;
   border: 1px solid #fff;
   background-color: transparent;
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 26px;
-  padding-right: 26px;
-  min-width: 300px;
+  max-width: 300px;
 }
-.modal__input::-moz-placeholder {
+.modal__input::-moz-placeholder, .modal__level::-moz-placeholder {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: #fff;
 }
-.modal__input::placeholder {
+.modal__input::placeholder, .modal__level::placeholder {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -215,6 +220,7 @@ img {
 .modal__save-wrap {
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
 }
 .modal__save {
   border: 1px solid #6b1b85;
@@ -227,7 +233,7 @@ img {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .modal__save:hover, .modal__save:focus {
   background-color: transparent;
