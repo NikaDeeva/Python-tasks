@@ -29,27 +29,35 @@
         <span class="header__describe">Organize, edit, observe, have it done</span>
     </header>
     <main>
-        <section class="todo">
+        <section class="todo container">
             <h2 class="todo__title">To do list</h2>
-              <input id="taskInput" class="todo__input" placeholder="New task">
-      <button onclick="openModal()">Add task</button>
-<div id="modal" class="todo__modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
+            <ul id="taskList" class="todo__list"></ul>
+      <button data-modal-open class="todo__add-btn">Add task</button>
+
+<div data-modal class="backdrop is-hidden">
+    <div class="modal">
+        <button class="modal__close" data-modal-close>
+             <svg class="modal__icon icon-cross"><use xlink:href="#icon-cross"></use></svg>
+        </button>
         <h3 class="modal__title">New task</h3>
-        <input id="modalTaskInput" placeholder="Введіть текст" class="modal__input">
+        <span class="modal__describe">Write your task and see it in your to do list</span>
+        <div class="modal__wrap"></div>
+        <input id="modalTaskInput" placeholder="Enter a task" class="modal__input">
+        <div class="modal__save-wrap">
         <button onclick="saveTask()" class="modal__save">Save</button>
+        </div>
+        </div>
     </div>
 </div>
-        <ul id="taskList" class="todo__list"></ul>
+        
         </section>
 
-         <section class="habits">
+         <section class="habits container">
          <h2 class="habits__title">Habits</h2>
          <ul id="habitList" class="habits__list"></ul>
          </section>
 
-         <section class="stats">
+         <section class="stats container">
             <h2 class="stats__title">Statistics</h2>
             <ul class="stats__list">
                 <li class="stats__item">
@@ -61,7 +69,7 @@
             </ul>
          </section>
 
-         <section class="notes">
+         <section class="notes container">
             <h2 class="notes__title">Notes</h2>
                <input id="noteInput" placeholder="Note">
         <button onclick="addNote()" class="notes__btn">Add</button>
@@ -70,5 +78,5 @@
     </main>
     <footer></footer>
     
-    <script src="script.js"></script>
+    <script src="/static/modal.js" type="module"></script>
 </body>

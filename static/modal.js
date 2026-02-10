@@ -1,20 +1,15 @@
-function openModal() {
-    document.getElementById("modal").style.display = "block";
-}
-
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-}
-
-function saveTask() {
-    const title = document.getElementById("modalTaskInput").value;
-
-    fetch("/tasks", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({title})
-    }).then(() => {
-        closeModal();
-        loadTasks();
-    });
-}
+(() => {
+    const refs = {
+      openModalBtn: document.querySelector('[data-modal-open]'),
+      closeModalBtn: document.querySelector('[data-modal-close]'),
+      modal: document.querySelector('[data-modal]'),
+    };
+  
+    refs.openModalBtn.addEventListener('click', toggleModal);
+    refs.closeModalBtn.addEventListener('click', toggleModal);
+  
+    function toggleModal() {
+      refs.modal.classList.toggle('is-hidden');
+      document.body.classList.toggle('no-scroll');
+    }
+  })();
