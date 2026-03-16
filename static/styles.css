@@ -89,7 +89,7 @@ img {
 
 .todo {
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 .todo__title {
   font-size: 36px;
@@ -197,6 +197,7 @@ img {
   margin-left: 40px;
 }
 .modal__input, .modal__level {
+  margin-top: 10px;
   border-radius: 5px;
   border: 1px solid #fff;
   background-color: transparent;
@@ -238,4 +239,17 @@ img {
 .modal__save:hover, .modal__save:focus {
   background-color: transparent;
   color: #6b1b85;
+}
+
+.habits {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.habits__select {
+  margin-top: 15px;
+  cursor: pointer;
+  max-width: 200px;
+}
+.habits__option {
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

@@ -82,7 +82,7 @@ img{
 }
 .todo{
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     &__title{
         font-size: 36px;
         font-weight: 700;
@@ -208,7 +208,7 @@ img{
     margin-left: 40px;
 }
 &__input, &__level{
-    // margin-top: 50px;
+    margin-top: 10px;
     // margin-left: 40px;
         border-radius: 5px;
         border: 1px solid #fff;
@@ -249,4 +249,15 @@ img{
         color: #6b1b85;
     }
 }
-
+.habits{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &__select{
+        margin-top: 15px;
+        cursor: pointer;
+        max-width: 200px;
+    }
+    &__option{
+        cursor: pointer;
+    }
+}

@@ -67,8 +67,37 @@
         </section>
 
          <section class="habits container">
-         <h2 class="habits__title">Habits</h2>
+         <h2 class="todo__title">Habits</h2>
          <ul id="habitList" class="habits__list"></ul>
+         <button data-modalHabit-open class="todo__add-btn">Add habit</button>
+         <div data-modalHabit class="backdrop is-hidden">
+    <div class="modal">
+        <button class="modal__close" data-modalHabit-close>
+             <svg class="modal__icon icon-cross"><use xlink:href="#icon-cross"></use></svg>
+        </button>
+        <h3 class="modal__title">New habit</h3>
+        <form class="modal__wrap" id="habitForm"> 
+            <label class="modal__label">
+                Habit name
+        <input id="habittaskName" placeholder="Enter a habit" class="modal__input" type="text"> 
+        </label>
+        <label class="modal__label">
+            Category
+            <select name="category" id="habitCategory" class="habits__select">
+                <option class="habits__option" value="health">Health</option>
+                <option class="habits__option" value="study">Study</option>
+                <option class="habits__option" value="personalGrowth">Personal growth</option>
+                <option class="habits__option" value="dailyRoutine">Daily routine</option>
+                <option class="habits__option" value="hobbies">Hobbies</option>
+                <option class="habits__option" value="productivity">Productivity</option>
+            </select>
+        </label>
+        <div class="modal__save-wrap">
+        <button class="modal__save" type="submit" id="saveBtn">Save</button>
+        </div>
+        </form>
+    </div>
+</div>
          </section>
 
          <section class="stats container">
@@ -85,7 +114,7 @@
 
          <section class="notes container">
             <h2 class="notes__title">Notes</h2>
-               <input id="noteInput" placeholder="Note">
+               <input id="noteInput" placeholder="Add a note">
         <button onclick="addNote()" class="notes__btn">Add</button>
         <ul id="noteList" class="notes__list"></ul>
          </section>
@@ -93,4 +122,5 @@
     <footer></footer>
     
     <script src="/static/modal.js" type="module"></script>
+    <script src="/static/habits_modal.js" type="module"></script>
 </body>
