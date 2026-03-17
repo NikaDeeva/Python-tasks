@@ -22,3 +22,16 @@ form.addEventListener("submit", function(e) {
 
 });
 
+async function loadTasks() {
+    const res = await fetch("/tasks");
+    const tasks = await res.json();
+    const container = document.getElementById("taskList");
+
+    tasks.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = `${task.name} | Difficulty: ${task.difficulty} | Importance: ${task.importance}`;
+        container.appendChild(li);
+    });
+}
+
+loadTasks();

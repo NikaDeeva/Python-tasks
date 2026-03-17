@@ -50,15 +50,15 @@
         <input id="taskName" placeholder="Enter a task" class="modal__input" type="text"> 
         </label>
         <label class="modal__label">
-            Difficulty /5
-            <input type="text" class="modal__level" id="taskDifficulty" placeholder="Enter a number out of 5">
+            Difficulty /3
+            <input type="number" class="modal__level" id="taskDifficulty" placeholder="Enter a number out of 5" min="1" max="3">
         </label>
         <label class="modal__label">
             Importance /3
-            <input type="text" class="modal__level" id="taskImportance" placeholder="Enter a number out of 3">
+            <input type="number" class="modal__level" id="taskImportance" placeholder="Enter a number out of 3" min="1" max="3">
         </label>
         <div class="modal__save-wrap">
-        <button class="modal__save" type="submit" id="saveBtn">Save</button>
+        <button class="modal__save" type="submit" id="saveTaskBtn">Save</button>
         </div>
         </form>
     </div>
@@ -101,7 +101,7 @@
          </section>
 
          <section class="stats container">
-            <h2 class="stats__title">Statistics</h2>
+            <h2 class="todo__title">Statistics</h2>
             <ul class="stats__list">
                 <li class="stats__item">
                     <h2 class="stats__subtitle">Tasks</h2>
@@ -113,14 +113,15 @@
          </section>
 
          <section class="notes container">
-            <h2 class="notes__title">Notes</h2>
-               <input id="noteInput" placeholder="Add a note">
+            <h2 class="todo__title">Notes</h2>
+               <input id="noteInput" placeholder="Add a note" class="notes__input">
         <button onclick="addNote()" class="notes__btn">Add</button>
         <ul id="noteList" class="notes__list"></ul>
          </section>
     </main>
     <footer></footer>
     
-    <script src="/static/modal.js" type="module"></script>
+    <script src="/static/todo_modal.js" type="module"></script>
+    <script src="/static/tasks.js" type="module"></script>
     <script src="/static/habits_modal.js" type="module"></script>
 </body>
