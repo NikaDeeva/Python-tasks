@@ -1,5 +1,5 @@
-from dataclasses import dataclass
-
+from dataclasses import dataclass, field
+from random import randint
 
 @dataclass
 class Task:
@@ -7,6 +7,7 @@ class Task:
     difficulty: int
     importance: int
     completed: bool = False
+    id: int = field(default_factory=lambda: randint(1000, 9999))
     def isImportant(self):
         if self.importance >= 3:
             return 'This task is important'

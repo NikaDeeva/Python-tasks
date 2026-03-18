@@ -3,8 +3,8 @@ from models import Task
 
 def load_tasks():
     with open("tasks.json","r",encoding="utf-8") as f:
-        data = json.load(f)
-    return [Task(**item) for item in data]
+        tasks = json.load(f)
+    return [Task(**item) for item in tasks]
 
 def save_tasks(tasks):
     with open("tasks.json","w",encoding="utf-8") as f:
