@@ -51,7 +51,7 @@
         </label>
         <label class="modal__label">
             Difficulty /3
-            <input type="number" class="modal__level" id="taskDifficulty" placeholder="Enter a number out of 5" min="1" max="3">
+            <input type="number" class="modal__level" id="taskDifficulty" placeholder="Enter a number out of 3" min="1" max="3">
         </label>
         <label class="modal__label">
             Importance /3
@@ -68,7 +68,14 @@
 
          <section class="habits container">
          <h2 class="todo__title">Habits</h2>
-         <ul id="habitList" class="habits__list"></ul>
+         <ul id="habitList" class="habits__list">
+            <ul id="healthHabList" class="habits__sublist"></ul>
+            <ul id="studyHabList" class="habits__sublist"></ul>
+            <ul id="growthHabList" class="habits__sublist"></ul>
+            <ul id="routineHabList" class="habits__sublist"></ul>
+            <ul id="hobbieshHabList" class="habits__sublist"></ul>
+            <ul id="productivityHabList" class="habits__sublist"></ul>
+         </ul>
          <button data-modalHabit-open class="todo__add-btn">Add habit</button>
          <div data-modalHabit class="backdrop is-hidden">
     <div class="modal">
@@ -93,7 +100,7 @@
             </select>
         </label>
         <div class="modal__save-wrap">
-        <button class="modal__save" type="submit" id="saveBtn">Save</button>
+        <button class="modal__save" type="submit" id="saveBtn" data-modalHabit-save>Save</button>
         </div>
         </form>
     </div>

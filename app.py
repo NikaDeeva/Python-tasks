@@ -21,12 +21,19 @@ def add_task():
     tasks = load_tasks()
     tasks.append(new_task)
     save_tasks(tasks)
-    return jsonify({"message": "ok"})
+    return jsonify({"message": "ok", "id": new_task.id, "completed": False})
     
 @app.route("/get_tasks", methods=["GET"])
 def get_tasks():
     tasks = load_tasks()
     return jsonify([task.__dict__ for task in tasks])
+
+@app.route("/delete_task/<int:task_id>", methods=["DELETE"])
+def delete_task(task_id):
+    tasks = load_tasks()  
+    tasks = [t for t in tasks if t.id != task_id]  
+    save_tasks(tasks)  
+    return jsonify({"message": "task deleted"})
 
 @app.route("/complete_task/<int:task_id>", methods=["PATCH"])
 def complete_task(task_id):

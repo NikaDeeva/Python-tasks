@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     refs.openModalBtn.addEventListener('click', toggleModal);
     refs.closeModalBtn.addEventListener('click', toggleModal);
+    refs.saveBtn.addEventListener('click', toggleModal)
 
     const form = document.getElementById('taskForm');
 
@@ -43,8 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function addTaskToList(name, id, completed) {
         const taskList = document.getElementById('taskList');
         const li = document.createElement('li');
+        li.className = 'task__item'
         li.innerHTML = `
-            <p>${name}</p>
+            <p class="task__name">${name}</p>
              <div class="task__btn-wrap">
         <button class="task__completed">Completed</button>
          <button class="task__delete">Delete</button>
