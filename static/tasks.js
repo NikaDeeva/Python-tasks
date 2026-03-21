@@ -72,3 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+const impSortBtn = document.getElementById('impSortBtn');
+const difSortBtn = document.getElementById('difSortBtn');
+
+// function sortByImportance(){
+// fetch('/get_tasks', method='GET')
+// .then(res => res.json())
+// .then(data => ())
+// }
