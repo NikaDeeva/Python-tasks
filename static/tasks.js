@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.toggle('no-scroll');
     }
 
+
     function addTaskToList(name, id, completed) {
         const taskList = document.getElementById('taskList');
         const li = document.createElement('li');
@@ -69,14 +70,46 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
         taskList.appendChild(li);
-    }
-});
-
-const impSortBtn = document.getElementById('impSortBtn');
+    };
+    const impSortBtn = document.getElementById('impSortBtn');
 const difSortBtn = document.getElementById('difSortBtn');
 
-// function sortByImportance(){
-// fetch('/get_tasks', method='GET')
-// .then(res => res.json())
-// .then(data => ())
-// }
+function sortByImportance(){
+    fetch('/get_tasks')
+    .then(res => res.json())
+    .then(data => {
+        data.sort((a, b) => b.importance - a.importance);
+        const taskList = document.getElementById('taskList');
+        taskList.innerHTML = ""; 
+        data.forEach(task => {
+            addTaskToList(task.name, task.id, task.completed);
+        });
+    });
+};
+
+impSortBtn.addEventListener('click', sortByImportance)
+
+function sortByDifficulty(){
+    fetch('/get_tasks')
+    .then(res => res.json())
+    .then(data => {
+        data.sort((a, b) => b.difficulty - a.difficulty);
+        const taskList = document.getElementById('taskList');
+        taskList.innerHTML = "";
+        data.forEach(task => {
+            addTaskToList(task.name, task.id, task.completed);
+        });
+    });
+};
+
+difSortBtn.addEventListener('click', sortByDifficulty);
+
+fetch('/get_tasks')
+.then(res => res.json())
+.then(data => {
+    data.forEach(task => {
+        addTaskToList(task.name, task.id, task.completed);
+    });
+});
+});
+

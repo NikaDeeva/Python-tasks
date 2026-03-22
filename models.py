@@ -20,3 +20,10 @@ class Task:
             return 'This task is not difficult'
         
 
+@dataclass
+class Habit:
+    name: str
+    cathegory: str
+    completed: bool = False
+    id: int = field(default_factory=lambda: randint(1000, 9999))
+    

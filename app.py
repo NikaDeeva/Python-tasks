@@ -4,10 +4,9 @@ from models import Task
 
 app = Flask(__name__)
 
-# домашня сторінка
 @app.route("/")
 def home():
-    return render_template("index.html")  # <-- твій HTML файл в templates/
+    return render_template("index.html")  
 
 
 @app.route("/add_task", methods=["POST"])

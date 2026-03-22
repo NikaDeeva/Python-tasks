@@ -135,6 +135,7 @@ img {
   border: 2px solid #252424;
   border-radius: 4px;
   margin-right: 30px;
+  margin-bottom: 30px;
 }
 .todo .task__name {
   color: #fff;
