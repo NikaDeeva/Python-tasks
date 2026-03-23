@@ -69,12 +69,24 @@
          <section class="habits container">
          <h2 class="todo__title">Habits</h2>
          <ul id="habitList" class="habits__list">
-            <ul id="healthHabList" class="habits__sublist"></ul>
-            <ul id="studyHabList" class="habits__sublist"></ul>
-            <ul id="growthHabList" class="habits__sublist"></ul>
-            <ul id="routineHabList" class="habits__sublist"></ul>
-            <ul id="hobbieshHabList" class="habits__sublist"></ul>
-            <ul id="productivityHabList" class="habits__sublist"></ul>
+            <ul id="healthHabList" class="habits__sublist">
+                <h2 class="habit__subtitle">Health</h2>
+            </ul>
+            <ul id="studyHabList" class="habits__sublist">
+                <h2 class="habit__subtitle">Study</h2>
+            </ul>
+            <ul id="growthHabList" class="habits__sublist">
+                <h2 class="habit__subtitle">Personal growth</h2>
+            </ul>
+            <ul id="routineHabList" class="habits__sublist">
+                <h2 class="habit__subtitle">Daily routine</h2>
+            </ul>
+            <ul id="hobbiesHabList" class="habits__sublist">
+    <h2 class="habit__subtitle">Hobbies</h2>
+</ul>
+            <ul id="productivityHabList" class="habits__sublist">
+                <h2 class="habit__subtitle">Productivity</h2>
+            </ul>
          </ul>
          <button data-modalHabit-open class="todo__add-btn">Add habit</button>
          <div data-modalHabit class="backdrop is-hidden">
@@ -86,21 +98,21 @@
         <form class="modal__wrap" id="habitForm"> 
             <label class="modal__label">
                 Habit name
-        <input id="habittaskName" placeholder="Enter a habit" class="modal__input" type="text"> 
+        <input id="habitName" placeholder="Enter a habit" class="modal__input" type="text"> 
         </label>
         <label class="modal__label">
             Category
             <select name="category" id="habitCategory" class="habits__select">
-                <option class="habits__option" value="health">Health</option>
-                <option class="habits__option" value="study">Study</option>
-                <option class="habits__option" value="personalGrowth">Personal growth</option>
-                <option class="habits__option" value="dailyRoutine">Daily routine</option>
-                <option class="habits__option" value="hobbies">Hobbies</option>
-                <option class="habits__option" value="productivity">Productivity</option>
-            </select>
+    <option class="habits__option" value="health">Health</option>
+    <option class="habits__option" value="study">Study</option>
+    <option class="habits__option" value="personalGrowth">Personal growth</option>
+    <option class="habits__option" value="dailyRoutine">Daily routine</option>
+    <option class="habits__option" value="hobbies">Hobbies</option>
+    <option class="habits__option" value="productivity">Productivity</option>
+</select>
         </label>
         <div class="modal__save-wrap">
-        <button class="modal__save" type="submit" id="saveBtn" data-modalHabit-save>Save</button>
+        <button class="modal__save" type="submit" id="saveHabitBtn" data-modalHabit-save>Save</button>
         </div>
         </form>
     </div>
@@ -130,6 +142,8 @@
     
     <!-- <script src="/static/todo_modal.js" type="module"></script> -->
     <script src="/static/tasks.js" type="module"></script>
-    <script src="/static/habits_modal.js" type="module"></script>
+    <script src="/static/habits.js" type="module"></script>
+
+    
     
 </body>

@@ -289,6 +289,53 @@ img {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+.habits__list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.habits__sublist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 30px;
+}
+.habits__item {
+  background-color: #6b1b85;
+  padding: 20px;
+  border: 2px solid #252424;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.habits .habit__name {
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.habits .habit__completed, .habits .habit__delete {
+  border: 1px solid #252424;
+  border-radius: 5px;
+  background-color: #4a2158;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 30px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
+  margin-top: 20px;
+}
+.habits .habit__completed:hover, .habits .habit__delete:hover,
+.habits .habit__completed:focus, .habits .habit__delete:focus {
+  background-color: #fff;
+  color: #6b1b85;
+}
 .habits__select {
   margin-top: 15px;
   cursor: pointer;
@@ -296,6 +343,9 @@ img {
 }
 .habits__option {
   cursor: pointer;
+}
+.habits .done {
+  background-color: rgba(25, 159, 54, 0.9019607843);
 }
 
 .notes {

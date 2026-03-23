@@ -1,1 +1,38 @@
-[]
+[
+    {
+        "name": "Read an english book",
+        "cathegory": "hobbies",
+        "completed": false,
+        "id": 8082
+    },
+    {
+        "name": "No phone before bed",
+        "cathegory": "productivity",
+        "completed": false,
+        "id": 5992
+    },
+    {
+        "name": "Practice IT",
+        "cathegory": "study",
+        "completed": false,
+        "id": 2549
+    },
+    {
+        "name": "Physical activity",
+        "cathegory": "health",
+        "completed": false,
+        "id": 9624
+    },
+    {
+        "name": "Write a diary",
+        "cathegory": "personalGrowth",
+        "completed": false,
+        "id": 4378
+    },
+    {
+        "name": "Go walking to school",
+        "cathegory": "dailyRoutine",
+        "completed": false,
+        "id": 3678
+    }
+]

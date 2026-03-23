@@ -1,40 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const refs = {
-        openModalBtn: document.querySelector('[data-modal-open]'),
-        closeModalBtn: document.querySelector('[data-modal-close]'),
-        saveBtn: document.getElementById('saveTaskBtn'), // зверни увагу на правильний id
-        modal: document.querySelector('[data-modal]'),
-    };
+   const refs = {
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    saveBtn: document.getElementById('saveTaskBtn'),
+    modal: document.querySelector('[data-modal]')
+};
 
-    refs.openModalBtn.addEventListener('click', toggleModal);
-    refs.closeModalBtn.addEventListener('click', toggleModal);
-    refs.saveBtn.addEventListener('click', toggleModal)
+// Відкриття модалки
+refs.openModalBtn.addEventListener('click', toggleModal);
 
-    const form = document.getElementById('taskForm');
+// Закриття модалки по хрестику
+refs.closeModalBtn.addEventListener('click', toggleModal);
 
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
+// Закриття модалки по кнопці Save
+refs.saveBtn.addEventListener('click', toggleModal);
 
-        const taskName = document.getElementById('taskName').value;
-        const taskDifficulty = document.getElementById('taskDifficulty').value;
-        const taskImportance = document.getElementById('taskImportance').value;
+// Закриття модалки по кліку на фон (backdrop)
+refs.modal.addEventListener('click', (e) => {
+    if (e.target === refs.modal) { // перевіряємо, що клік саме на фон
+        toggleModal();
+    }
+});
 
-        fetch("/add_task", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                name: taskName,
-                difficulty: taskDifficulty,
-                importance: taskImportance
-            })
+// Форма додавання задачі
+const form = document.getElementById('taskForm');
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const taskName = document.getElementById('taskName').value;
+    const taskDifficulty = document.getElementById('taskDifficulty').value;
+    const taskImportance = document.getElementById('taskImportance').value;
+
+    fetch("/add_task", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            name: taskName,
+            difficulty: taskDifficulty,
+            importance: taskImportance
         })
-        .then(res => res.json())
-        .then(data => {
-            addTaskToList(taskName, data.id, data.completed);
-            toggleModal();
-            form.reset();
-        });
+    })
+    .then(res => res.json())
+    .then(data => {
+        addTaskToList(taskName, data.id, data.completed);
+        toggleModal(); // закриваємо модалку після додавання задачі
+        form.reset();
     });
+});
+
+// Функція відкриття/закриття модалки
+function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
+    document.body.classList.toggle('no-scroll');
+}
 
     function toggleModal() {
         refs.modal.classList.toggle('is-hidden');
@@ -45,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function addTaskToList(name, id, completed) {
         const taskList = document.getElementById('taskList');
         const li = document.createElement('li');
-        li.className = 'task__item'
+        li.className = 'task__item';
         li.innerHTML = `
             <p class="task__name">${name}</p>
              <div class="task__btn-wrap">
