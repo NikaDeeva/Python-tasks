@@ -34,5 +34,17 @@
         "cathegory": "dailyRoutine",
         "completed": false,
         "id": 3678
+    },
+    {
+        "name": "Beber  2l de agua",
+        "cathegory": "health",
+        "completed": false,
+        "id": 2349
+    },
+    {
+        "name": "Dormir bien",
+        "cathegory": "health",
+        "completed": false,
+        "id": 2616
     }
 ]
