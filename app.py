@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
-from storage import load_tasks, save_tasks, load_habits, save_habits
-from models import Task, Habit
+from storage import load_tasks, save_tasks, load_habits, save_habits, load_notes, save_notes
+from models import Task, Habit, Note
 
 app = Flask(__name__)
 
@@ -78,6 +78,29 @@ def complete_habit(habit_id):
             break
     save_habits(habits)
     return jsonify({"message": "habit completed"})
+
+@app.route("/add_note", methods=["POST"])
+def add_note():
+    data = request.get_json()
+    new_note = Note(
+        data["name"],
+    )
+    notes = load_notes()
+    notes.append(new_note)
+    save_notes(notes)
+    return jsonify({"message": "ok", "id": new_note.id, "completed": False})
+    
+@app.route("/get_notes", methods=["GET"])
+def get_notes():
+    notes = load_notes()
+    return jsonify([note.__dict__ for note in notes])
+
+@app.route("/delete_note/<int:note_id>", methods=["DELETE"])
+def delete_note(note_id):
+    notes = load_notes()  
+    notes = [n for n in notes if n.id != note_id]  
+    save_notes(notes)  
+    return jsonify({"message": "note deleted"})
 
 if __name__ == "__main__":
     app.run(debug=True)

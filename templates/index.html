@@ -19,17 +19,16 @@
     <header class="header">
         <nav>
             <ul class="header__list">
-                <li class="header__item"><a href="#todo" class="header_section">To do list</a></li>
-                <li class="header__item"><a href="#habits" class="header_section">Habits</a></li>
-                <li class="header__item"><a href="#stats" class="header_section">Statistics</a></li>
-                <li class="header__item"><a href="#notes" class="header_section">Notes</a></li>
+                <li class="header__item"><a href="#todo" class="header__section">To do list</a></li>
+                <li class="header__item"><a href="#habits" class="header__section">Habits</a></li>
+                <li class="header__item"><a href="#notes" class="header__section">Notes</a></li>
             </ul>
         </nav>
         <h1 class="header__title">Tasks & Habits Tracker</h1>
         <span class="header__describe">Organize, edit, observe, have it done</span>
     </header>
     <main>
-        <section class="todo container">
+        <section class="todo container" id="todo">
             <h2 class="todo__title">To do list</h2>
             <div class="todo__sort-wrap">
                 <button id="impSortBtn" class="todo__sort">Sort by importance</button>
@@ -66,7 +65,7 @@
         
         </section>
 
-         <section class="habits container">
+         <section class="habits container" id="habits">
          <h2 class="todo__title">Habits</h2>
          <ul id="habitList" class="habits__list">
             <ul id="healthHabList" class="habits__sublist">
@@ -119,23 +118,12 @@
 </div>
          </section>
 
-         <section class="stats container">
-            <h2 class="todo__title">Statistics</h2>
-            <ul class="stats__list">
-                <li class="stats__item">
-                    <h2 class="stats__subtitle">Tasks</h2>
-                </li>
-                <li class="stats__item">
-                    <h2 class="stats__subtitle">Habits</h2>
-                </li>
-            </ul>
-         </section>
 
-         <section class="notes container">
+         <section class="notes container" id="notes">
             <h2 class="todo__title">Notes</h2>
-               <input id="noteInput" placeholder="Add a note" class="notes__input">
-        <button onclick="addNote()" class="notes__btn">Add</button>
-        <ul id="noteList" class="notes__list"></ul>
+               <input id="notesInput" placeholder="Add a note" class="notes__input">
+        <button id="notesBtn" class="notes__btn" type="button">Add</button>
+        <ul id="notesList" class="notes__list"></ul>
          </section>
     </main>
     <footer></footer>
@@ -143,6 +131,7 @@
     <!-- <script src="/static/todo_modal.js" type="module"></script> -->
     <script src="/static/tasks.js" type="module"></script>
     <script src="/static/habits.js" type="module"></script>
+    <script src="/static/notes.js" type="module"></script>
 
     
     

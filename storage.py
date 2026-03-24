@@ -1,5 +1,5 @@
 import json
-from models import Task, Habit
+from models import Task, Habit, Note
 
 def load_tasks():
     with open("tasks.json","r",encoding="utf-8") as f:
@@ -22,3 +22,12 @@ def load_habits():
 def save_habits(habits):
     with open("habits.json","w",encoding="utf-8") as f:
         json.dump([habit.__dict__ for habit in habits], f, indent=4)
+        
+def load_notes():
+    with open("notes.json","r",encoding="utf-8") as f:
+        notes = json.load(f)
+    return [Note(**item) for item in notes]
+
+def save_notes(notes):
+    with open("notes.json","w",encoding="utf-8") as f:
+        json.dump([note.__dict__ for note in notes], f, indent=4)

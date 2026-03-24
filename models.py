@@ -27,3 +27,7 @@ class Habit:
     completed: bool = False
     id: int = field(default_factory=lambda: randint(1000, 9999))
     
+@dataclass
+class Note:
+    name: str
+    id: int = field(default_factory=lambda: randint(1000, 9999))
