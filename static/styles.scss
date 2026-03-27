@@ -431,3 +431,41 @@ img{
         }
    }
 }
+.footer{
+    background-color: #6b1b85;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    // &__info{
+    //     margin-left: 140px;
+    // }
+    &__text{
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 20px;
+    }
+    &__contact{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &__describe{
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 20px;
+        max-width: 600px;
+        text-align: right;
+    }
+    &__mail{
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: underline;
+    }
+}

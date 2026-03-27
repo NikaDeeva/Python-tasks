@@ -31,7 +31,8 @@ form.addEventListener("submit", function(e) {
     const taskDifficulty = document.getElementById('taskDifficulty').value;
     const taskImportance = document.getElementById('taskImportance').value;
 
-    fetch("/add_task", {
+    if(taskName !== '' | taskDifficulty !== '' | taskImportance !== ''){
+ fetch("/add_task", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
@@ -46,6 +47,11 @@ form.addEventListener("submit", function(e) {
         toggleModal(); // закриваємо модалку після додавання задачі
         form.reset();
     });
+    }
+
+   else{
+    alert('Please, fill all the gaps');
+   }
 });
 
 // Функція відкриття/закриття модалки
@@ -61,6 +67,7 @@ function toggleModal() {
 
 
     function addTaskToList(name, id, completed) {
+        const tasksNum = document.getElementById('tasksNum');
         const taskList = document.getElementById('taskList');
         const li = document.createElement('li');
         li.className = 'task__item';
@@ -75,7 +82,8 @@ function toggleModal() {
          li.querySelector(".task__delete").addEventListener("click", () => {
         const taskId = li.getAttribute("data-id");
         fetch(`/delete_task/${taskId}`, { method: "DELETE" })
-            .then(() => li.remove());
+            .then(() => li.remove())
+            .then(() => getTasksNum().then(num => tasksNum.textContent = num))
     });
     li.setAttribute('data-completed', completed);
    li.querySelector(".task__completed").addEventListener("click", () => {
@@ -87,8 +95,22 @@ function toggleModal() {
             li.setAttribute('data-completed', true); 
         });
 });
-        taskList.appendChild(li);
+if (name){
+taskList.appendChild(li);
+getTasksNum().then(num => tasksNum.textContent = num);
+}
+        else{
+            alert('Please, enter a task')
+        }
+
     };
+async function getTasksNum() {
+    const tasks = await fetch('/get_tasks');
+    const data = await tasks.json();
+    return data.length;
+    
+}
+
     const impSortBtn = document.getElementById('impSortBtn');
 const difSortBtn = document.getElementById('difSortBtn');
 

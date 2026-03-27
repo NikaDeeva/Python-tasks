@@ -14,13 +14,13 @@
     {
         "name": "Practice IT",
         "cathegory": "study",
-        "completed": false,
+        "completed": true,
         "id": 2549
     },
     {
         "name": "Physical activity",
         "cathegory": "health",
-        "completed": false,
+        "completed": true,
         "id": 9624
     },
     {
@@ -32,19 +32,13 @@
     {
         "name": "Go walking to school",
         "cathegory": "dailyRoutine",
-        "completed": false,
+        "completed": true,
         "id": 3678
     },
     {
-        "name": "Beber  2l de agua",
-        "cathegory": "health",
-        "completed": false,
-        "id": 2349
-    },
-    {
-        "name": "Dormir bien",
-        "cathegory": "health",
-        "completed": false,
-        "id": 2616
+        "name": "Ride a bike",
+        "cathegory": "hobbies",
+        "completed": true,
+        "id": 7118
     }
 ]

@@ -26,8 +26,8 @@ const refs = {
 
         const habitName = document.getElementById('habitName').value;
         const habitCathegory = document.getElementById('habitCategory').value;
-
-        fetch("/add_habit", {
+        if (habitName !== ''){
+  fetch("/add_habit", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -41,6 +41,11 @@ const refs = {
             toggleModal(); // закриваємо модалку після додавання
             form.reset();
         });
+        }
+else{
+    alert('Please, enter a habit')
+}
+      
     });
 
     function toggleModal() {
@@ -62,7 +67,7 @@ const cathegories = {
    
 
 function addHabitToList(name, id, completed, cathegory){
-
+const habitsNum = document.getElementById('habitsNum');
 const li = document.createElement('li');
 li.className = 'habits__item'
 li.innerHTML = `<p class="habit__name">${name}</p>
@@ -74,7 +79,8 @@ li.innerHTML = `<p class="habit__name">${name}</p>
          li.querySelector(".habit__delete").addEventListener("click", () => {
         const habitId = li.getAttribute("data-id");
         fetch(`/delete_habit/${habitId}`, { method: "DELETE" })
-            .then(() => li.remove());
+            .then(() => li.remove())
+            .then(() => getHabitsNum().then(num => habitsNum.textContent = num))
     });
     li.setAttribute('data-completed', completed);
    li.querySelector(".habit__completed").addEventListener("click", () => {
@@ -87,10 +93,17 @@ li.innerHTML = `<p class="habit__name">${name}</p>
         });
 });
 const list = cathegories[cathegory]; 
+
 if (list) {                         
     list.appendChild(li);            
 } 
+getHabitsNum().then(num => habitsNum.textContent = num);
+};
 
+async function getHabitsNum(){
+    const habits = await fetch('/get_habits');
+    const data = await habits.json();
+    return data.length;
 }
 
 

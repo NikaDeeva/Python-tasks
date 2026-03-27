@@ -426,4 +426,40 @@ img {
 .notes .note__delete:hover {
   background-color: #fff;
   color: #6b1b85;
+}
+
+.footer {
+  background-color: #6b1b85;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+.footer__text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.footer__describe {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  max-width: 600px;
+  text-align: right;
+}
+.footer__mail {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-decoration: underline;
 }/*# sourceMappingURL=styles.css.map */
